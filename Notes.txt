@@ -1,0 +1,216 @@
+INTRODUCTION :
+Running a JS file :
+(Environment used : NodeJS)
+Running a js file -
+cmd : node <filename>
+Using Github Codespaces :
+go to git repo and click on code>Codespaces>Create codespaces on main.
+Setting up codespace :
+hamburger>view>command pallete>container>Add dev container configuration files>Show all definition>NodeJs and Javascript>latest version>OK.
+Rebuild.
+Make directories and files and keep using.
+Push repo as you do in terminal.
+later click on codespaces and shut machine.(When not using)
+----------------------------------------------------------
+Variables and Constants : 
+Constants : Unchanged values once declared.
+const accountID = 6566445 // declaration(We cannot change values later , it will throw error)
+
+Variables : containers to store value.
+let accountMail = "nabinhaigol@gmail.com"
+var AccountPassword = "982902"
+accountCity = "Siliguri"
+
+Printing variables in a table : 
+use : console.log([var1,var2,var3])
+output : (after changing above varible data)
+┌─────────┬─────────────────────────┐
+│ (index) │ Values                  │
+├─────────┼─────────────────────────┤
+│ 0       │ 'nabinhaigol@gmail.com' │
+│ 1       │ 6566445                 │
+│ 2       │ 'Noida'                 │
+│ 3       │ '982789'                │
+└─────────┴─────────────────────────┘
+ Var vs Let : 
+let (follows block scoped - always use let)
+var( does not follow blocks and fucntional scope , and prefer not to use it)
+ NOTE : If we declare a variable and dont initialise it , the value printed is "Undefined"
+ ----------------------------------------------------------------------------------------
+DataTypes and ECMA Standards : 
+code : "use strict"; //treat all JS code as the newer version 
+we dont use alert(expression) while in terminal coz the popup wont show up.
+CODE Readability should be very high.
+Use MdnDocs for reference (not official)
+official reference : tc39.es (EcmaScript - Writes standards for how JavaScript shall run)
+Primitive Data Types : 
+Number 
+ranges -(2^53 − 1) ( Number.MIN_SAFE_INTEGER ) to 2^53 − 1
+use bigint for number of larger range
+Other data types :
+string = "kullu"
+boolean = true/false
+null = standalone value(khaali hai)
+undefined = When values aren't defined
+symbol =  unique
+Object 
+code : console.log(typeof <variabe name>)
+//Exceptions :
+typeof null : Object 
+typeof undefined : undefined 
+----------------------------------------------------------------------------------------------
+Conversion of Data Types :
+let score = 23 // type = number 
+code : 
+let score = "34a"
+console.log(typeof score)
+let valueInNumber = Number(score)
+console.log(typeof valueInNumber);
+console.log(valueInNumber);
+OUTPUT : 
+string(as 34a is string)
+number(we converted it to string although effectively its wrong)
+NaN(Not a number as 34a cannot be converted)
+NaN is not a number, null is converted to 0, undefined is converrted to undefined ,string that has digits is
+converted to number, and for boolean true = 1, false = 0.
+Similary lets test for boolean : 
+code :
+let isLoggedIn = 1
+let booleanLoggedIn = Boolean(isLoggedIn)
+console.table([typeof(isLoggedIn),isLoggedIn, typeof booleanLoggedIn, booleanLoggedIn])
+
+Output : 
+┌─────────┬───────────┐
+│ (index) │ Values    │
+├─────────┼───────────┤
+│ 0       │ 'number'  │
+│ 1       │ 1         │
+│ 2       │ 'boolean' │
+│ 3       │ true      │
+└─────────┴───────────┘
+and empty String in converted to false and value added string is converted to true.
+---------------------------------------------------------------------------------------------------------------
+Operations : 
+Basic ones : 
+code : 
+let value = 3;
+let negValue = -value
+console.log(value);
+console.log(negValue);
+console.table([value+value,value*value,value/4,value**value,value%2]);
+Output :
+3
+-3
+┌─────────┬────────┐
+│ (index) │ Values │
+├─────────┼────────┤
+│ 0       │ 6      │
+│ 1       │ 9      │
+│ 2       │ 0.75   │
+│ 3       │ 27     │
+│ 4       │ 1      │
+└─────────┴────────┘
+Order of Operations : 
+{ Addition
+  Multiplication
+  Division
+  Exponentiation
+  Modulus } 
+we Concat strings using "+"
+Interesting observations-code :
+let str1 = "Nabin "
+let str2 = "Sharma"
+console.log(str1 + str2); // Prints Nabin Sharma 
+console.log("1" + 2);
+console.log("1" + "2");
+console.log(1 + "2");
+console.log("1" + 2 + 2);
+console.log(1 + 2 + "2");
+
+Output :
+Nabin Sharma
+12
+12
+12
+122
+32 
+We also have increment and decrement operators :
+var++ , var-- (postfix)
+--var , ++var (prefix)
+Link to detailed article on Operators(Must go through once : )
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Expressions_and_Operators#arithmetic_operators
+-------------------------------------------------------------------------------------------------------------
+Comparison of Values :
+code : 
+console.table(["02">1,"2">1]);
+console.table([null > 0, null == 0,null>=0])
+Output : 
+┌─────────┬────────┐
+│ (index) │ Values │
+├─────────┼────────┤
+│ 0       │ true   │
+│ 1       │ true   │
+└─────────┴────────┘
+┌─────────┬────────┐
+│ (index) │ Values │
+├─────────┼────────┤
+│ 0       │ false  │
+│ 1       │ false  │
+│ 2       │ true   │
+└─────────┴────────┘
+Very inconsistent behaviour!
+When Undefined s compared it states false for all the three conditions.
+when we use === it checks strictly , it checks value and data type of variable too.
+eg : console.log("2" === 2) // returns false
+Always write clean code and avoid such conversions.
+--------------------------------------------------------------------------------------
+Summary of Data Types :
+
+Primitive Data Types 
+String
+Number 
+Boolean
+Null
+undefined
+symbol
+BigInt
+
+Reference types : 
+Arrays 
+Objects 
+Functions
+
+Why is JavaScript Dynamically types language?
+the developers need not specify the data type of any variable while writing the code. 
+It also supports changing the datatype of variables at runtime as well.
+Using Symbol:
+const ID = Symbol('123')
+const AnotherID = Symbol('123')
+console.log(ID === AnotherID);//false as we know Symbols are unique
+using BigInt :
+const Number1 = 992338913871232368423974n //end with n to declare it as BigInt
+Declaring Reference data types
+code : 
+//Declaring array 
+const Heroes = ["Papa","Mummy","Bhagwaan"]
+//Declaring Objects(can contain any data types,another objects and even functions in it )
+let Myobj = {
+    name : "Nikhil",
+    age : 23,
+}   
+//Declaring Function 
+const MyFunc = function(){
+    console.log("Namaste Bhaiya");
+}
+console.log(Heroes)
+console.log(MyFunc)
+console.log(Myobj)
+
+Output : 
+Object
+function
+Object
+
+
+
+
