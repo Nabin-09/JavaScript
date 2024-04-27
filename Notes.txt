@@ -210,6 +210,100 @@ Output :
 Object
 function
 Object
+----------------------------------------------------------------------------------------------
+Basic Memory Management : 
+Majorly we will talking of two kinds of memory Stack and Heap :
+Primitive Data types use Stack memory and Non primitive/Referene types use Heap memory.
+While using stack memory we send a copy of variable value and not original value.
+code : 
+
+//Stack (Primitive Data types) and Heap (Non-Primitive/Reference Type)
+let YoutubeName = "Nabin GayMer"
+let anotherName = YoutubeName
+console.log(anotherName);
+anotherName = "Nitin Gaymer"
+console.log(anotherName);
+/*OUTPUT
+Nabin GayMer
+NitinGaymer  */
+let userOne = { //heap give reference of original value
+    email : "Nabingogoi@gmail.com",
+    upi : "8929297628@ypl"
+}
+let userTwo = userOne
+userTwo.email = "nabinsharmalol@gmail.com"
+console.log(userOne.email);//Value gets changes in the userOne Object as well as reference or adress is passed
+                           // to userTwo and not the copy of value 
+console.log(userTwo.email);
+/*OUPUT:
+nabinsharmalol@gmail.com
+nabinsharmalol@gmail.com */
+Go through above code its very important to understand when is the copy of value passed and when the actual 
+reference/address of the variable is passed.
+---------------------------------------------------------------------------------------------------------------------
+Strings : 
+
+denoted by Writing under " " or ' ' 
+declararion(other way):
+const Name = new String("Nabin");//Using constructor
+When we declare using the above way Name's type is Object and not string
+String{'Nabin'}
+ 0:N
+ 1:a
+ 2:b
+ 3:i
+ 4:n
+These are key value pairs
+DON'T use + for String concatenation rather go for 
+String Interpolation : 
+
+code : 
+
+const name = "Nabin "
+const repoCount = 66 
+//Concatenation
+console.log(name + repoCount + " Value"); // Outdated Technique dont use
+console.log(`My name is ${name} and my repo count is ${repoCount}`);//String interpolation
+Output : 
+Nabin 66 Value
+My name is Nabin  and my repo count is 66
+We have many methods for operations on Strings
+console.log(Name[0])//accesses 1st element of String
+
+code : 
+
+const Name =  new String("NabinHAi")//Declaration using constructor
+
+//Some methods 
+ console.log(Name.length);
+ console.log(Name.toUpperCase);//Original Value isn't changed
+ console.log(Name.charAt(2));//Checks what character at what Index
+ console.log(Name.indexOf('a'));//Checks char is at what index
+ const NewMaaal = Name.substring(0,4)//First Argument is for index and 2nd is for how many characters
+ console.log(NewMaaal);//Substring doesnot obey negative values
+ const anotherString = "Cricket"
+ console.log(anotherString.slice(-5,3));//First Argument is for Index and 2nd is for how many characters.
+ const newName1 = "  Karizma   "
+ console.log(newName1);
+ console.log(newName1.trim());//Trims starting and end spaces
+ //Read MDN docs for Trim (Very Important)
+ const url = "https://nabin.dev/nabin%20sharma"
+ console.log(url.replace('nab','car'));//only first nab is changed and not second 
+
+ /*OUTPUT : 
+ 8
+[Function: toUpperCase]
+b
+1
+Nabi
+i
+  Karizma
+Karizma
+https://carin.dev/nabin%20sharma
+ */
+----------------------------------------------------------------------------------------------------------
+
+
 
 
 
