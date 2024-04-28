@@ -302,6 +302,46 @@ Karizma
 https://carin.dev/nabin%20sharma
  */
 ----------------------------------------------------------------------------------------------------------
+Numbers : 
+We can define a number by :
+code : const balance = new Number(100);
+When we convert it toString() it data type changes to object .
+similarly we use toFixed(n) method to set how many digits should be availaible after decimal point.
+for toPrecision (How many digits to be shown after rounding off).
+eg : num = 28.9878 --> toPrecision(3) = 28.9 and toPrecision(2) = 29
+code : 
+
+console.log(balance.toString());//Converting Number to string
+console.log(typeof balance);//Object
+console.log(balance.toFixed(2));//Used to give precision value 
+const othNum = 28.98832
+console.log(othNum.toPrecision(2));//returns a string (returns 28.99{4 characters})
+const hundreds = 1000000
+console.log(hundreds.toLocaleString('en-IN'));//Uses Indian way to commas to segregate values.
+console.log(Number.MAX_SAFE_INTEGER);//9007199254740991 {We have many more function}
+---------------------------------------------------------------------------------------------
+Math : The Math object in JavaScript provides a variety of methods to perform various mathematical operations.
+We have many methods like : 
+ceil 
+floor 
+sqrt 
+round 
+max 
+min 
+abs 
+We have a very special one Math.random(), it generates random numbers bw 0 to 0.999999
+code : 
+//Formula : 
+const mx = 10;
+const mn = 20;
+console.log(Math.floor(Math.random()*(mx-mn + 1))+mn);//Generates random numbers bw 10 and 20
+Output : 
+16 
+
+
+
+
+---------------------------------------------------------------------------------------------
 
 
 
