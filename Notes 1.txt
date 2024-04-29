@@ -364,7 +364,69 @@ console.log(newDate.getDay());// 0 (Sunday)
 newDate.toLocaleString('default',{
     weekday: "long"
 })
+---------------------------------------------------------------------------------------
+Arrays : 
+These are resizable and can have elements of different data types.
+these create shallow copies , shallow copy of an object is a copy which share the same 
+references hence change made are altered in original array , deep copy is an opposite of it.
+We have prototype access in JS , check in console 
+Used methods : 
+push - inserts value at end
+pop - remove lasts value 
+unshift - inserts value at start
+shift - removes first element 
+includes - returns bool if <element> in arr.
+indexof - return index of element.
+join - adds all elemnts of an array into string.(comma separated)
 
+code (Splice and slice) :
+// Slice and splice 
+let my1 = [1,2,3,4,6,7]
+console.log(my1.slice(1,4));// 2 3 4(doesn't change array)
+console.log(my1.splice(1,4));// 2 3 4 6 (changes original array)
+---------------------------------------------------------------
+if we push another array in main array it does not concat array but inserts the latter 
+as a different array.
+we can use concat but it uses return a new and does not change the current array.
+code : 
+let myHer = ["kill","die","mourn","sorrow"]
+let MyHer2 = ["live","life","courage"]
+// myHer.push(MyHer2)
+// console.log(myHer);[ 'kill', 'die', 'mourn', 'sorrow', [ 'live', 'life', 'courage' ] ]
+let MyHer3 = myHer.concat(MyHer2)
+console.log(MyHer3);
+/*Output : 
+[
+  'kill',    'die',
+  'mourn',   'sorrow',
+  'live',    'life',
+  'courage'
+]*/
+Dont use concat for it , use spread.
+code : 
+let myHer3 = [...myHer,...MyHer2]
+console.log(myHer3);
+it spreads all the element independently and stores in new array.
+flat - returns an new array with all subarrays concatenated into array , we can give depth of what subarrays ahve to be resolved
+we can give let arr = arr2.flat(infinity); for concatenating all subarrays.
+isArray - returns if its an array
+from - converts data into array
+of - converts elements in array.
+code : 
+
+let myHer3 = [...myHer,...MyHer2]
+console.log(myHer3);
+let a1 = [1,2,[3,4],5,[1,[2,3]]]
+let a2 = a1.flat(Infinity);
+console.log(a2);//[1, 2, 3, 4, 5, 1, 2, 3]
+console.log(Array.isArray("Nabin")); 
+console.log(Array.from("Nabin"));//[ 'N', 'a', 'b', 'i', 'n' ] 
+console.log(Array.from({name:"Nabin"}));//Interesting - gets confused and returns nothing
+let score1 = 100
+let score2 = 200
+let score3 = 300
+console.log(Array.of(score1,score2,score3));//[ 100, 200, 300 ]
+--------------------------------------------------------------------------------------------------------------------------------
 
 
 
