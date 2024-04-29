@@ -427,7 +427,48 @@ let score2 = 200
 let score3 = 300
 console.log(Array.of(score1,score2,score3));//[ 100, 200, 300 ]
 --------------------------------------------------------------------------------------------------------------------------------
+Objects : 
+Singletons are generated when we make objects through constructors but no through Literals.
+code : 
+const JSuser = {
+    name : "Nabin",//Key value pairs
+    age : "18",
+    location : "Noida",
+    isLoggedIn : false,
+    LastLoginDays : ["monday","Tuesday"],
+    "Full name " : "Nabin Sharma"
+}//Literal method 
+Object.create //constructor method
+Accesing elements of Objects : 
+console.log(JSuser.email);//Not best way to access as it cannot access when key pair is in double quotes
+console.log(JSuser["Full name "]);//Best way to access Object elements{Square Notation} 
+relating Symbol to Objects :
+declaring symbol : 
+const Mysm = Symbol('key1')
+declaring it in object 
+const JSuser2 {
+ [Mysm] : 'Key1'
+}//using square Bracket notation.
+code :
+  JSuser.email = "nabinsha@87gmail.com"//Overwriting  data
+  Object.freeze(JSuser)//freezes data 
+function in Objects  :
+JSuser.greeting = function(){
+    console.log("Namaste Bhaiyon ");
+}
+ code : 
+  JSuser.greeting = function(){
+    console.log("Namaste Bhaiyon ");
+  }
 
-
+   console.log(JSuser.greeting());//output Namaste Bhaiyon 
+   console.log(JSuser.greeting);//return only reference of Function prints : [Function(anonymous)] 
+this operator :
+ use string Interpolation , this operator is used to reference same object.
+code : 
+  JSuser.greetingTwo = function(){
+    console.log(`Namastee , ${this["Full name"]}`);
+}
+  console.log(JSuser.greetingTwo());//Prints Namaste Nabin Sharma
 
 
