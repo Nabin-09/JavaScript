@@ -23,5 +23,6 @@ const obj2 = {
     3 : "c",
     4 : "d"
 }
-const obj3  = {obj1,obj2} // creates object inside Object not preferred
+// const obj3  = {obj1,obj2} // creates object inside Object not preferred
+const obj3 = Object.assign(obj1,obj2)
 console.log(obj3);

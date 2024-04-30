@@ -470,5 +470,21 @@ code :
     console.log(`Namastee , ${this["Full name"]}`);
 }
   console.log(JSuser.greetingTwo());//Prints Namaste Nabin Sharma
+--------------------------------------------------------------------------------------------------
+Objects  :
+defining objects in Objects :
+code : 
+
+const regular = {
+    owner : "Nabin",
+    email : "abxc89@gmail.com",
+    fullname : {//Object in object
+        userfullname : {//Object in Object in Object
+            firstname : "Nabin",
+            lastname : "Sharma"
+        }
+    }
+}
+console.log(regular.fullname.userfullname.firstname);//accessing objects in objects
 
 
