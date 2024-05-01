@@ -529,7 +529,74 @@ console.log(Object.entries(user));/*[
   ] */ 
 user.hasOwnProperty("isLoggedIn");//returns true we have the particular key in Object
 -------------------------------------------------------------------------------------------------------
-Ob
+Objects Destructuring ans JSON API :
+code :
+ const course = {
+    coursename : "Js tutorial",
+    price : 999,
+    instructor : "Nabin"
+}
+// console.log(course["coursename"]); working syntax
+// other ay to extract values 
+const {coursename : name } = course //name is the short name I gave
+console.log(name);//Js tutorial 
+---------------------------------------------------------------------------------------------------------
+Functions :
+Functions wrap up a piece of code that are meant to be used again and again in the code.
+code :
+ 
+function print(){
+    console.log("NABIN");
+}
+print()
+function AddNumber(num1,num2){
+    console.log(num1 + num2);
+}
+// AddNumber()//Prints NaN
+// AddNumber(3,"3")//33
+// AddNumber(3,"a")//3a
+// AddNumber("a",3)//a3
+// AddNumber(3,null)//3
+const result = AddNumber(3,5)
+console.log(result)//undefined as we haven't returned value to result.(it prints result after returning)
+function AddNumber(num1,num2){
+    console.log(num1 + num2);
+    return num1 + num2;
+}
+------------------------------------------------------------------------------------------------------------
+Functions and Objects :
+code :
+function CalculateCartPrice(num1){
+    return num1
+}
+console.log(CalculateCartPrice(400,300,500));//prints only 400
+we shall use ... operator (rest operator,it is called spread operator for different cases)
+... rest operator add all the values to an array 
+code : 
+ function calprice(val1,val2,...num1){
+    return num1
+}
+console.log(calprice(200,300,400,500,600));//Prints [400,500,600]
+Passing Objects to functions :
+const user1 = {
+    name : "Nabin",
+    age : 20
+}
+function handleObject(anyobject){
+    console.log(`Username is ${anyobject.name} and age is ${anyobject.age}`);
+}
+handleObject(user1)//Username is Nabin and Age is 20
+//Other way to do it - 
+handleObject({
+    name : "Nigga",
+    age : 89
+})//Username is Nigga is age is 89
+const arr = [1,2,3,4,5];
+function retArr (getArray){
+    return getArray[1]
+}
+console.log(retArr(arr));//2
+
 
 
 
