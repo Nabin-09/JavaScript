@@ -8,4 +8,4 @@ if(true){
     var c = 30;
 }
 console.log(a);//a is not defined 
-console.log(c);//30 hence use of var is deprecated.
+console.log(c);//30 hence use of var is deprecated.git 
