@@ -18,3 +18,12 @@ if(true){
     // console.log(username + website);// cannot access website outside scope 
 }
 // console.log(username); throws error out of scope
+//Hoisting :
+console.log(addone(5));//Prints 6 even if function is declared later
+function addone (num){
+    return num + 1;
+}
+/* console.log(ans);//throws error as ans is defined later and it stores values of addtwo
+const ans = function addtwo(num){
+    return num + 2;
+} */
