@@ -27,3 +27,5 @@ function addone (num){
 const ans = function addtwo(num){
     return num + 2;
 } */
+/* console.log(b);
+let b = 2;//cannot access before initialisation */
