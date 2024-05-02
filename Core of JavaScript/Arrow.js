@@ -44,3 +44,20 @@ chai()
   fetch: [Function: fetch],
   crypto: [Getter]
 } */ 
+const chai3 = function (){
+  let username = "Nabin "
+  console.log(this.username); // undefined
+}
+/* arrow function : */
+const chai2 = ()  => {
+  let username = "Nabin"
+  console.log(this);
+}
+chai3(); // undefined
+chai2(); // {}
+const addtwo = (num1,num2) => {
+  return num1 + num2;
+}
+/* Implicit return :
+ const addtwo = (num1.num2) => return num1 + num2 (used when only one line in function) */
+console.log(addtwo(7,8));//15

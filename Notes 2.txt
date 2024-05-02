@@ -1,0 +1,83 @@
+Scopes :
+"scope" refers to the accessibility and visibility of variables and functions within your code.
+It defines the context in which variables and functions are declared and where they can be accessed.
+code :
+Globally scoped 
+// let a = 10;
+// const b = 21;
+// console.log(a);//10 
+// console.log(b);//21
+block scoped :
+if(true){
+    let a = 10;
+    const b = 20;
+    var c = 30;
+}
+console.log(a);//a is not defined 
+console.log(c);//30 hence use of var is deprecated.
+remember : Node scope and Windows scope are different.
+------------------------------------------------------
+Scope level and Mini Hoisting :
+code : (closure of functions)
+function one (){
+    const username = "Nabin"
+    function two (){//can access all elements of one
+        const website = "youtube.com"
+        console.log(username);
+    }
+    console.log(website);//cannot acces website outside two
+    two()//prints Nabin
+}
+one()
+code : 
+ if(true){
+    const username = "Nabin"
+    if(username === "Nabin"){
+        const website = " youtube "
+        console.log(username + website);
+    }
+    // console.log(username + website);// cannot access website outside scope 
+}
+// console.log(username); throws error out of scope
+Hoisting : Hoisting in JavaScript is a mechanism where variable and function 
+declarations are moved to the top of their containing scope during the compilation phase, before the code is executed. This means 
+that regardless of where variables and functions are declared within their scope, they are treated as if they were declared at the top.
+code : 
+//Hoisting :
+console.log(addone(5));//Prints 6 even if function is declared later
+function addone (num){
+    return num + 1;
+}
+console.log(ans);//throws error as ans is defined later and it stores values of addtwo
+const ans = function addtwo(num){
+    return num + 2;
+}
+This keyword :
+console.log(this) prints {} in node environment(standalone).
+if console.log(this) is ran in Console (browser) return Window object (most used global object)
+ code : 
+function chai(){
+    let username = "Nitesh"
+    console.log(this);
+}
+chai()
+/* OUTPUT : <ref *1> Object [global] {
+  global: [Circular *1],
+  clearImmediate: [Function: clearImmediate],
+  setImmediate: [Function: setImmediate] {
+    [Symbol(nodejs.util.promisify.custom)]: [Getter]
+  },
+  clearInterval: [Function: clearInterval],
+  clearTimeout: [Function: clearTimeout],
+  setInterval: [Function: setInterval],
+  setTimeout: [Function: setTimeout] {
+    [Symbol(nodejs.util.promisify.custom)]: [Getter]
+  },
+  queueMicrotask: [Function: queueMicrotask],
+  structuredClone: [Function: structuredClone],
+  atob: [Getter/Setter],
+  btoa: [Getter/Setter],
+  performance: [Getter/Setter],
+  fetch: [Function: fetch],
+  crypto: [Getter]
+} */ 
