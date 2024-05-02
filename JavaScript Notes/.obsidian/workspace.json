@@ -6,6 +6,7 @@
       {
         "id": "80c78786fd70bc73",
         "type": "tabs",
+        "dimension": 77.57847533632287,
         "children": [
           {
             "id": "4b5dce2b53c3adba",
@@ -13,7 +14,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Untitled.md",
+                "file": "NOTES 3.md",
                 "mode": "source",
                 "source": false
               }
@@ -24,6 +25,7 @@
       {
         "id": "7992d243c4fbcd41",
         "type": "tabs",
+        "dimension": 22.421524663677133,
         "children": [
           {
             "id": "a28d328ade8226dd",
@@ -99,7 +101,6 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Untitled.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -116,7 +117,6 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Untitled.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -138,16 +138,14 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {
-                "file": "Untitled.md"
-              }
+              "state": {}
             }
           }
         ]
       }
     ],
     "direction": "horizontal",
-    "width": 300,
+    "width": 200,
     "collapsed": true
   },
   "left-ribbon": {
@@ -160,8 +158,9 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "4b5dce2b53c3adba",
+  "active": "7e0d90039fa3c152",
   "lastOpenFiles": [
+    "NOTES 3.md",
     "Untitled.md",
     "Welcome.md",
     "Untitled.canvas"

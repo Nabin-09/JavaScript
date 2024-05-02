@@ -81,3 +81,43 @@ chai()
   fetch: [Function: fetch],
   crypto: [Getter]
 } */ 
+ code : 
+ const chai3 = function (){
+  let username = "Nabin "
+  console.log(this.username); // undefined
+}
+/* arrow function : */
+const chai2 = ()  => {
+  let username = "Nabin"
+  console.log(this);
+}
+chai3(); // undefined
+chai2(); // {}
+const addtwo = (num1,num2) => {
+  return num1 + num2;
+}
+/* Implicit return :
+ const addtwo = (num1.num2) => return (num1 + num2) (used when only one line in function)
+ write return keyword when we use { } in a function and skip it when we use () */
+console.log(addtwo(7,9));//prints 16
+--------------------------------------------------------------------------------------------------------------------------------------------
+ IIFE : Immediate Invoke Function Expression 
+IIFE : IIFE stands for Immediately Invoked Function Expression. It is a JavaScript function that runs as soon as it is defined.
+code : 
+ //Immediately Invoked Function Expression (IIFE)
+function chai(){
+    console.log(`DB connected`);
+}
+chai(); //(use ; while using IIFE ,prints DB connected
+(function addTwo(){
+    console.log(`This is IIFE`)
+}) // first paranthesis si for definition of function 
+(); // parentheseis for execution prints this is IIFE
+/*Passing Parameters to Fucntion */
+((name) => {
+    console.log(`DB connected ${name}`);
+})('Nabin'); //Prints DB connected Nabin
+ ------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
