@@ -214,6 +214,7 @@ console.log(val4);//10
  */
 const iceprice = 100 ? console.log("more than 99") : console.log("less than 99");
 --------------------------------------------------------------------------------------------------------------------
+Iterators/loops - For loop :
 
 
 
