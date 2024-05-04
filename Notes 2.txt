@@ -117,7 +117,103 @@ chai(); //(use ; while using IIFE ,prints DB connected
 ((name) => {
     console.log(`DB connected ${name}`);
 })('Nabin'); //Prints DB connected Nabin
- ------------------------------------------------------------------------------------------------------------------------------------------------
+ --------------------------------------------------------------------------------------------------------------------------------------------
+Java Execution Context :
+ : {} - Global Execution Context.(this)
+ : Fucntion Execution Context.
+ : Eval Execution Context.
+JS is a single threaded language.
+Phases :
+Memory Creation phase :
+code :
+let val1 = 10;
+let val2 = 20;
+function adnum(num1,num2){
+    let total = num1 + num2;
+    return total;
+}
+let result = adnum(val1,val2);
+let result2 = adnum(60,80);
+/*Global execution happens first(allocated under 'this') - it will always occur
+Memory Phase : 
+val1 -> undefined 
+val2 -> undefined 
+adnum -> definiton 
+result -> undefined
+result2 -> undefined
+Execution phase :
+val1 <- 10
+val2 <- 20
+adnum -> creates executional context box 1 = (includes new variable environment + execution thread)
+box1 has Memory phase = val1 -> undefined, val2 = undefined,total -> undefined. 
+box1 then goes for Executional context num1->10,num2->20
+and then executional context deletes. */
+---------------------------------------------------------------------------------------------------------------------
+IF - Else statement :
+//if statement
+if(true){
+    console.log(9);//Prints
+}
+if (false){
+    console.log(10);//doesnt print
+}
+const userLoggedIn = true
+if(userLoggedIn){
+  console.log(`Nabin is logged in `);
+}
+/* relational OPerators :
+ <,>.!=,==,===,<=,>= */
+ /* If - Else combination , if does not execute the else block occurs,hence these are block statements */
+ const temp = 11;
+ if(temp > 35){
+    console.log(`Its Hot`);
+ }
+ else{
+    console.log(`Its chilled`);//this block runs
+ }
+ // &&(AND)-> true when both conditions true  and ||(OR) -> true if any one of the conditions are true.
+------------------------------------------------------------------------------------------------------------------
+Truthy falsy and Nullsceing Operator :
+const email = "nabin98@gmail.com"
+if(email){//assuming that string has true email,even runs when we send an array
+    console.log("Got Email");
+}
+else{//runs when empty string
+    console.log("Didn't get");
+}
+/* Flasy values
+false
+0 
+-0
+0n
+""
+null,undefined
+Nan */
+/* All other than Falsy values are truthy values
+special ones : "0" , 'false'," ",[],{},function(){} */
+const emptyObj = {}
+if(Object.keys(emptyObj).length == 0){//Checking Object in conditionals
+    console.log("Object is not empty");
+}
+//Nullish Coalescing Operator (??): null undefined
+let val1;
+val1 = 5??10
+console.log(val1);//5
+let val2 
+val2 = null??10
+console.log(val2);//10
+//rejects values null and undefined
+let val3
+val3 = null??undefined
+console.log(val3);//undefined
+console.log(val3);//undefined
+let val4 = null ?? 10 ?? 20
+console.log(val4);//10
+// ternary operator
+/* Condition ? true : false
+ */
+const iceprice = 100 ? console.log("more than 99") : console.log("less than 99");
+--------------------------------------------------------------------------------------------------------------------
 
 
 

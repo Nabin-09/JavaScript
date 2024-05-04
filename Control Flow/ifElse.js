@@ -19,3 +19,4 @@ if(userLoggedIn){
  else{
     console.log(`Its chilled`);//this block runs
  }
+ // &&(AND)-> true when both conditions true  and ||(OR) -> true if any one of the conditions are true.
