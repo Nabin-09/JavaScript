@@ -1,0 +1,33 @@
+DOM : 
+Html documeny has two child - Head and Body 
+Head has Title and meta etc and body has many nodes too, they can have attributes 
+ 
+---------------------------------------------------------------------------------------------------
+use commands : 
+document 
+document.baseURL
+document.links -> returns HTML collection
+we have many methods and some selector methods too,
+document.getElementById('classname')
+We can further customize it : 
+document.getElementById('classname').innerHTML = 'Nabin' //changes HTML of page to Nabin
+
+---------------------------------------------------------------------------------------------------
+
+DOM Selectors:
+document.getElementById('title') -> returns <h1 id="title" class="heading">DOM learning with Nabin</h1>
+document.getElementById('title').id -> returns ID (useful when we have class name and not ID name)
+document.getElementById('title').className -> return class name 
+document.getElementById('title').getAttribute(Name_of_Attribute_you_want)
+document.getElementByID('title').setAttribute(class,heading2) -> overwrites current class to heading2 and removes heading.
+we can give variables these values too eg :
+const title = document.getElementByID('title')
+now we can use it to suppose put style to it :
+title.style.backgroundColor = 'green' ->turns bg to green
+
+Some more selectors : 
+title.innerHTML
+title.innerText
+title.textContent
+
+
