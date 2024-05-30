@@ -26,8 +26,26 @@ now we can use it to suppose put style to it :
 title.style.backgroundColor = 'green' ->turns bg to green
 
 Some more selectors : 
-title.innerHTML
-title.innerText
-title.textContent
+title.innerHTML->returns it will all the HTML tags.
+title.innerText-> returns text that is visible on screen.
+title.textContent-> returns all the text even the ones not visible.
+document.querySelector('h1') -> returns the first h1 of the html page(we can use #title .heading to refer to ID and class anf get back values)
+we can use all the CSS Selectors values in queryselectors.
+NodeList and HTMLcollections aren't arrays they are different check prototype for each.
+using QuerySelector
+document.querySelector('ul')// selecting UL
+const myUL = document.querySelector('ul') // storing it in a variable
+myUL.querySelector('li')// selecting first li
+const turnGreen = myUl.querySelector('li')//storing it in a variable
+turnGreen.style.backgroundColor = "Green"//using to change color
+turnGreen.style.padding = "10px"//doing more css changes.
+
+document.querySelectorAll('li')
+returns a NodeList if all li in the unordered list.
+const Mytemp = document.querySelectorAll('li')
+MyTemp.style.backgroundColor = "green" // doesn't work
+myTemp[0].style.backgroundColor = "green" // this works
+
+document.getElementByClassName
 
 
