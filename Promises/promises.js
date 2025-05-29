@@ -46,3 +46,22 @@ promiseFour.then(function(user){
 }).catch(function(error){
     console.log(error)
 })
+//finally is to happen when whatever was meant to happen has happened
+//Letsee how to handle Promises using async await
+
+const promiseFive = new Promise(function(resolve , reject){
+    setTimeout(function(){
+        let error = true;
+        if(!error){
+            resolve({user:"Nabin", pass:"xyz"})
+        }else{
+            reject("ERROR : 404")
+        }
+    },1000)
+})
+
+async function consumePromiseFive(){
+    const response = await promiseFive
+    console.log(response)
+}
+consumePromiseFive()
