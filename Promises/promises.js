@@ -121,3 +121,13 @@ Node consumed
 { username: 'Nabin', email: 'sharmanabin@gmail.com' }
 { user: 'Nabin', pass: 'xyz' }
 */
+fetch('https://api.github.com/users/Nabin-09')
+.then((response)=>{
+    return response.json();
+})
+.then((data)=>{
+    console.log(data);
+})
+.catch((error)=>{
+    console.log(error)
+})
