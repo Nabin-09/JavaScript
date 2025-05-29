@@ -27,3 +27,22 @@ PromiseThree.then(function(user){
     console.log(user);
 })
 //{ username: 'Nabin', email: 'sharmanabin@gmail.com' }
+
+
+const promiseFour = new Promise(function(resolve , reject){
+    let error = true;
+    if(!error){
+        resolve({user:"Nabin" , pass:"1234"})
+    }else{
+        reject("404 Buddy")
+    }
+})
+
+promiseFour.then(function(user){
+    console.log(user);
+    return user.username
+}).then(function(username){
+    console.log(username)
+}).catch(function(error){
+    console.log(error)
+})
