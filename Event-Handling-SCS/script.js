@@ -20,3 +20,9 @@
 // sel.addEventListener('change' , function(det){
 //     header.textContent = `${det.target.value} selected`
 // })
+
+window.addEventListener('keydown' , (det)=>{
+    console.log(det);
+    if(det.key === ' ') h1.textContent = 'SPC';
+    else h1.textContent = det.key;    
+})
