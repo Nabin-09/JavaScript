@@ -21,8 +21,18 @@
 //     header.textContent = `${det.target.value} selected`
 // })
 
-window.addEventListener('keydown' , (det)=>{
-    console.log(det);
-    if(det.key === ' ') h1.textContent = 'SPC';
-    else h1.textContent = det.key;    
+// window.addEventListener('keydown' , (det)=>{
+//     console.log(det);
+//     if(det.key === ' ') h1.textContent = 'SPC';
+//     else h1.textContent = det.key;    
+// })
+
+let abcd = document.querySelector('#abcd');
+ 
+abcd.addEventListener('mouseover' , ()=>{
+    abcd.style.backgroundColor = 'yellow';
+})
+
+abcd.addEventListener('mouseout' , ()=>{
+    abcd.style.backgroundColor = 'red';
 })
